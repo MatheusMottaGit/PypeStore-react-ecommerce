@@ -5,9 +5,6 @@ export interface IAuthContext extends User{
     signOut: ()=> void
 }
 
-
-
-//user
 export interface User{
     id?: number
     token?: string
@@ -16,9 +13,6 @@ export interface User{
     password?: string
 }
 
-
-
-//products 
 export interface Prods{
     id: number
     name: string
@@ -29,8 +23,6 @@ export interface Prods{
     overview: string
 }
 
-
-
 export interface IProdContext{
     prods: Prods[]
     individualProd: Prods | null
@@ -38,9 +30,6 @@ export interface IProdContext{
     getProdDetails: (url: string)=> Promise<void>
 }
 
-
-
-//cart 
 export interface ICartContext{
     cart: Prods[]
     setCart: React.Dispatch<React.SetStateAction<Prods[]>> 

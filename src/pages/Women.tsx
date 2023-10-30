@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import Footer from '../components/Footer'
 
 import NavBarProdsPages from '../components/NavBarProdsPages'

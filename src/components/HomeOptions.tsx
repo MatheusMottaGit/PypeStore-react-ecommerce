@@ -2,16 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 
 import '../../main.css'
 
-import { BiSupport, BiX } from 'react-icons/bi'
-import { MdOutlinePayments, MdOutlineRemoveModerator, MdRemoveShoppingCart,} from 'react-icons/md'
-import { RiShoppingCartLine } from 'react-icons/ri'
+import { Info, CreditCard, CopyX, LucideShoppingBag, ShoppingBag} from 'lucide-react'
 
-import * as Dialog from '@radix-ui/react-dialog'
 import { CartContext } from '../contexts/CartContext'
-import { Link } from 'react-router-dom'
 import RemovedModal from '../extra_components/removed/RemovedModal'
-import ItemSavedModal from '../extra_components/saved/ItemSavedModal'
 import CleanModal from '../extra_components/cleaned/CleanModal'
+import Link from 'next/link'
 
 const HomeOptions = () => {
 
@@ -27,9 +23,9 @@ const HomeOptions = () => {
     <>
         <div className='options grid grid-cols-3 w-fit h-fit m-10'>
 
-          <Link to='/support' className='cursor-pointer flex items-center justify-center border-solid border-[1px] border-zinc-300 w-[200px] h-[80px] mx-[10rem]'>
+          <Link href='/support' className='cursor-pointer flex items-center justify-center border-solid border-[1px] border-zinc-300 w-[200px] h-[80px] mx-[10rem]'>
             <div className='w-[60%] h-full grid grid-cols-2 items-center justify-items-center'>
-            <BiSupport size={30} color='orange'/>
+            <Info size={30} color='orange'/>
             <div>
               <span className='font-bold text-[.8rem]'>Support 24/7</span>
               <p className='text-[.6rem]'>Online 24 hours</p>
@@ -39,7 +35,7 @@ const HomeOptions = () => {
 
           <div className='cursor-pointer flex items-center justify-center border-solid border-[1px] border-zinc-300 w-[200px] h-[80px] mx-[10rem]'>
             <div className='w-[60%] h-full grid grid-cols-2 items-center justify-items-center'>
-            <MdOutlinePayments size={30} color='orange'/>
+            <CreditCard size={30} color='orange'/>
             <div>
               <span className='font-bold text-[.8rem]'>Payment</span>
               <p className='text-[.6rem]'>See the methods</p>
@@ -51,7 +47,7 @@ const HomeOptions = () => {
             <Dialog.Trigger className='flex items-center justify-center border-solid border-[1px] border-zinc-300 w-[200px] h-[80px] mx-[10rem] mt-[0.1px] rounded-none'>
             
               <div className='w-[60%] h-full grid grid-cols-2 items-center justify-items-center'>
-                <RiShoppingCartLine size={30} color='orange'/>
+                <ShoppingBag size={30} color='orange'/>
                 <div>
                   <span className='font-bold text-[.8rem]'>Your cart</span>
                   <p className='text-[.6rem]'>Save your items</p>
@@ -73,7 +69,7 @@ const HomeOptions = () => {
                                 >
                                 <Dialog.Root>
                                   <Dialog.Trigger>
-                                    <MdOutlineRemoveModerator
+                                    <CopyX
                                       color='orange'
                                       onClick={()=>{
                                         removeItemsFromCart(item)

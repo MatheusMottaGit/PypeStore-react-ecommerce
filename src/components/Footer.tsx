@@ -1,24 +1,20 @@
 import React from 'react'
-import { FiGithub } from 'react-icons/fi'
-import { GrInstagram } from 'react-icons/gr'
-import { MdLocationOn, MdOutlineEmail } from 'react-icons/md'
-import { RiPhoneFill } from 'react-icons/ri'
-import { TbBrandTwitter } from 'react-icons/tb'
+import { MapPin, Github, Instagram, Phone, Twitter, Mail } from 'lucide-react'
 
 const Footer = () => {
   return (
     <footer className='footer bg-zinc-800 h-[20vh] w-screen grid grid-cols-2 place-items-center text-form'>
         <div className='grid grid-rows-3 gap-5'>
           <div className='flex items-center text-[1.2rem] gap-2'>
-            <MdLocationOn size={15}/>
+            <MapPin size={15}/>
             <p>Volta Redonda, Brazil</p>
           </div>
           <div className='flex items-center text-[1.2rem] gap-2'>
-            <RiPhoneFill size={15}/>
+            <Phone size={15}/>
             <p>55+ 24 1234567</p>
           </div>
           <div className='flex items-center text-[1.2rem] gap-2'>
-            <MdOutlineEmail size={15}/>
+            <Mail size={15}/>
             <p>pypesupport@gmail.com</p>
           </div>
         </div>
@@ -32,9 +28,9 @@ const Footer = () => {
               doloribus consequatur recusandae eius odio cumque labore asperiores explicabo.
           </p>
           <div className='flex items-center mt-2 gap-11'> 
-            <GrInstagram size={15} color='darkgrey'/>
-            <TbBrandTwitter size={15} color='darkgrey'/>
-            <FiGithub size={15} color='darkgrey'/>
+            <Instagram size={15} color='darkgrey'/>
+            <Twitter size={15} color='darkgrey'/>
+            <Github size={15} color='darkgrey'/>
           </div>
         </div>
     </footer>

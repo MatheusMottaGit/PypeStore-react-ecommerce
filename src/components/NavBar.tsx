@@ -4,8 +4,6 @@ import '../../main.css'
 
 import * as HoverCard from '@radix-ui/react-hover-card'
 
-import {MdOutlineSearch} from 'react-icons/md'
-
 import Hamburguer from 'hamburger-react'
 
 const NavBar = () => {

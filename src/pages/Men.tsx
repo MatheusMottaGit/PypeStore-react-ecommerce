@@ -1,5 +1,4 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
 import Footer from '../components/Footer'
 
 import NavBarProdsPages from '../components/NavBarProdsPages'
@@ -8,7 +7,6 @@ import MenPresentation from '../extra_components/men/MenPresentation'
 import Office from '../extra_components/men/Office'
 import Shoes from '../extra_components/men/Shoes'
 import Tshirts from '../extra_components/men/Tshirts'
-import WomenPresentation from '../extra_components/women/WomenPresentation'
 import { useSteps } from '../hooks/useSteps'
 
 const Men = () => {

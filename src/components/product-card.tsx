@@ -11,7 +11,7 @@ export interface Product {
 
 const ProductCard = ({ id, name, price, url }: Product) => {
   return (
-    <Card key={id} className='rounded-sm text-center space-y-4'>
+    <Card key={id} className='rounded-sm text-center space-y-4 p-2'>
       <Image 
         src={url}
         alt=''

@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
 import { Button } from '@/components/ui/button'
+import { ShoppingBag } from 'lucide-react'
+import MenuList from '@/components/menu-list'
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -22,16 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fontSans.variable} font-sans text-ground`}>
         <main className="bg-[url('assets/home.png')] bg-cover bg-fixed bg-center min-h-screen">
-          <header className='flex items-center justify-between py-2 px-4 shadow-xl bg-slate-200'>
+          <header className='flex items-center justify-between py-2 px-44 shadow-xl bg-zinc-100'>
             <Button variant='outline' className='font-bold border-ground border-2 rounded-sm'>
               Pypestore
             </Button>
 
-            <ul className='flex items-center gap-8 text-xs font-medium'>
-              <li>Home</li>
-              <li>Products</li>
-              <li>Contact Us</li>
-            </ul>
+            <MenuList />
+
+            <ShoppingBag className='w-5 h-5'/>
           </header>
 
           {children}

@@ -31,15 +31,15 @@ export default function Home() {
     <main>
 
       {/* presentation */}
-      <div className="h-[90vh] flex items-center justify-start px-16">
-        <div className="w-2/4 flex flex-col gap-4">
+      <div className="h-[60vh] flex items-center justify-start px-44">
+        <div className="flex flex-col gap-4">
           <h1 className="text-7xl font-bold">Welcome to Pypestore!</h1>
 
-          <span>
+          <span className="w-2/4 text-zinc-900">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et ullam dolorem ad, exercitationem doloribus nostrum voluptatum odit doloremque! Debitis est iure nobis molestiae vel tempore quia quis minima harum sunt?
           </span>
 
-          <Button className="w-64 mt-6">
+          <Button className="w-64 mt-12 bg-ground text-zinc-300">
             Let's start 
             <ArrowDown className="w-4 h-4"/>
           </Button>
@@ -47,7 +47,7 @@ export default function Home() {
       </div>
 
       {/* home */}
-      <div className="bg-slate-200 h-screen flex items-center flex-col gap-16 py-10 px-16">
+      <div className="bg-zinc-100 flex items-center flex-col gap-16 py-10 px-32">
 
         {/* services */}
         <div className="flex gap-16">

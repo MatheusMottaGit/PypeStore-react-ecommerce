@@ -24,6 +24,7 @@ const Men = () => {
         </div>
       </div>
 
+      {/* products section */}
       <div className="bg-zinc-100 flex items-center flex-col gap-16 py-5 px-32">
 
         {/* filter management */}

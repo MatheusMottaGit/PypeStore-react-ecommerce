@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Outputs a Single-Page Application (SPA).
-  distDir: './dist', // Changes the build output directory to `./dist/`.
+  images: {
+    domains: [
+      'pngimg.com',
+      'cdn1.brandability.co.za',
+      'media.istockphoto.com',
+      'youneedit.pl',
+      "live.staticflickr.com",
+      "purepng.com",
+      "www.pinclipart.com",
+      "www.robertoverino.com",
+      "i.pinimg.com"
+    ]
+  }
 }
- 
-export default nextConfig
+
+module.exports = nextConfig

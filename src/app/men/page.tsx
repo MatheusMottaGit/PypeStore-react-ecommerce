@@ -1,10 +1,45 @@
 'use client'
+import FilteredProducts from '@/components/filtered-products'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Clothe } from '@/types/types'
 import { ArrowDown, SlidersHorizontal } from 'lucide-react'
 import React, { useState } from 'react'
+
+type MenSelectValues = {
+  id: string
+  value: string
+  title: string
+  clothe: Clothe
+} 
+
+const selectValues: MenSelectValues[] = [
+  {
+    id: '23892',
+    value: 't-shirt',
+    title: 'T-shirts',
+    clothe: "t-shirts",
+  },
+  {
+    id: '21123',
+    value: 'pants',
+    title: 'Pants',
+    clothe: 'pants',
+  },
+  {
+    id: '28323',
+    value: 'jackets',
+    title: 'Jackets',
+    clothe: 'jackets',
+  },
+  {
+    id: '22334',
+    value: 'shoes',
+    title: 'Shoes',
+    clothe: 'shoes',
+  },
+]
 
 const Men = () => {
   const [category, setCategory] = useState<Clothe>("t-shirts")
@@ -52,17 +87,22 @@ const Men = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem onClick={() => setCategory("t-shirts")} className='cursor-pointer' value='t-shirts'>T-shirts</SelectItem>
-                <SelectItem onClick={() => setCategory("pants")} className='cursor-pointer' value='pants'>Pants</SelectItem>
-                <SelectItem onClick={() => setCategory("jackets")} className='cursor-pointer' value='jackets'>Jackets</SelectItem>
-                <SelectItem onClick={() => setCategory("shoes")} className='cursor-pointer' value='shoes'>Shoes</SelectItem>
+                {selectValues.map((select) => {
+                  return (
+                    <SelectItem key={select.id} value={select.value} onClick={() => setCategory(select.clothe)}>
+                      {select.title}
+                    </SelectItem>
+                  )
+                })}
               </SelectGroup>
             </SelectContent>
           </Select>
         </div>
 
         {/* filtered products */}
-
+        <FilteredProducts 
+          category={category}
+        />
       </div>
     </main>
   )

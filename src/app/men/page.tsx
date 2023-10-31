@@ -1,4 +1,7 @@
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Select, SelectTrigger } from '@/components/ui/select'
+import { Separator } from '@/components/ui/separator'
 import { ArrowDown, SlidersHorizontal } from 'lucide-react'
 import React from 'react'
 
@@ -29,18 +32,23 @@ const Men = () => {
 
         {/* filter management */}
         <div className='flex items-center justify-between w-full'>
-          <div className='flex space-x-2 items-center border-r border-black px-2'>
+          <div className='flex space-x-2 items-center'>
             <SlidersHorizontal className='w-4 h-4'/>
-            <h2>Filters</h2>
-          </div>
+            <h2 className='border-r px-2 border-r-ground'>Filters</h2>
 
-          <div className='flex'>
-            <span>
+            <span className='flex items-center gap-2 pl-3'>
               Results
+              <Badge>
+                15
+              </Badge>
             </span>
-
-            
           </div>
+
+          <Select>
+            <SelectTrigger className='w-52'>
+              Sort By
+            </SelectTrigger>
+          </Select>
         </div>
       </div>
     </main>

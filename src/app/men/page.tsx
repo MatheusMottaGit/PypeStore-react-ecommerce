@@ -12,7 +12,7 @@ const selectValues: SelectValues[] = [
     id: '23892',
     value: 't-shirt',
     title: 'T-shirts',
-    clothe: 't-shirts',
+    clothe: 't-shirt',
   },
   {
     id: '21123',
@@ -24,7 +24,7 @@ const selectValues: SelectValues[] = [
     id: '28323',
     value: 'jackets',
     title: 'Jackets',
-    clothe: 'jackets',
+    clothe: 'jacket',
   },
   {
     id: '22334',
@@ -35,7 +35,7 @@ const selectValues: SelectValues[] = [
 ]
 
 const Men = () => {
-  const [category, setCategory] = useState<Clothe>("t-shirts")
+  const [clothe, setClothe] = useState<Clothe>("t-shirt")
 
   return (
     // men page
@@ -82,7 +82,7 @@ const Men = () => {
               <SelectGroup>
                 {selectValues.map((select) => {
                   return (
-                    <SelectItem key={select.id} value={select.value} onClick={() => setCategory(select.clothe)}>
+                    <SelectItem key={select.id} value={select.value} onClick={() => setClothe(select.clothe)}>
                       {select.title}
                     </SelectItem>
                   )
@@ -94,7 +94,7 @@ const Men = () => {
 
         {/* filtered products */}
         <FilteredProducts 
-          category={category}
+          clothe={clothe}
         />
       </div>
     </main>

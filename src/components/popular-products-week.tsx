@@ -1,6 +1,7 @@
 import { api } from '@/lib/axios'
 import React from 'react'
-import ProductCard, { Product } from './product-card'
+import ProductCard from './product-card'
+import { Product } from '@/types/types'
 
 const PopularProductsWeek = async () => {
 
@@ -11,7 +12,8 @@ const PopularProductsWeek = async () => {
     <div className='grid grid-cols-5 gap-8 place-items-center'>
       {products.slice(0, 5).map((prod) => {
         return (
-          <ProductCard 
+          <ProductCard
+            key={prod.id} 
             id={prod.id}
             name={prod.name}
             price={prod.price}

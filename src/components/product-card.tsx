@@ -1,13 +1,7 @@
 import React from 'react'
 import { Card, CardDescription, CardTitle } from './ui/card'
 import Image from 'next/image'
-
-export interface Product {
-  id: number
-  name: string
-  url: string
-  price: number
-}
+import { Product } from '@/types/types'
 
 const ProductCard = ({ id, name, price, url }: Product) => {
   return (

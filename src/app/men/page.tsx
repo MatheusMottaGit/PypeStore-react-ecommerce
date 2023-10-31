@@ -3,23 +3,16 @@ import FilteredProducts from '@/components/filtered-products'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Clothe } from '@/types/types'
+import { Clothe, SelectValues } from '@/types/types'
 import { ArrowDown, SlidersHorizontal } from 'lucide-react'
 import React, { useState } from 'react'
 
-type MenSelectValues = {
-  id: string
-  value: string
-  title: string
-  clothe: Clothe
-} 
-
-const selectValues: MenSelectValues[] = [
+const selectValues: SelectValues[] = [
   {
     id: '23892',
     value: 't-shirt',
     title: 'T-shirts',
-    clothe: "t-shirts",
+    clothe: 't-shirts',
   },
   {
     id: '21123',

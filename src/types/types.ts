@@ -1,0 +1,1 @@
+export type Clothe = "t-shirts" | "pants" | "shoes" | "jackets" | "dress"

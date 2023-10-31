@@ -1,6 +1,11 @@
+import { Clothe } from '@/types/types'
 import React from 'react'
 
-const FilteredProducts = () => {
+interface FilteredProductsProps {
+  category: Clothe
+}
+
+const FilteredProducts = ({ category }: FilteredProductsProps) => {
   return (
     <div>
 

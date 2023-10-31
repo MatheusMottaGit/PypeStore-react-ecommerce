@@ -1,10 +1,14 @@
+'use client'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Clothe } from '@/types/types'
 import { ArrowDown, SlidersHorizontal } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Men = () => {
+  const [category, setCategory] = useState<Clothe>("t-shirts")
+
   return (
     // men page
     <main>
@@ -48,10 +52,10 @@ const Men = () => {
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                <SelectItem className='cursor-pointer' value='t-shirts'>T-shirts</SelectItem>
-                <SelectItem className='cursor-pointer' value='pants'>Pants</SelectItem>
-                <SelectItem className='cursor-pointer' value='jackets'>Jackets</SelectItem>
-                <SelectItem className='cursor-pointer' value='shoes'>Shoes</SelectItem>
+                <SelectItem onClick={() => setCategory("t-shirts")} className='cursor-pointer' value='t-shirts'>T-shirts</SelectItem>
+                <SelectItem onClick={() => setCategory("pants")} className='cursor-pointer' value='pants'>Pants</SelectItem>
+                <SelectItem onClick={() => setCategory("jackets")} className='cursor-pointer' value='jackets'>Jackets</SelectItem>
+                <SelectItem onClick={() => setCategory("shoes")} className='cursor-pointer' value='shoes'>Shoes</SelectItem>
               </SelectGroup>
             </SelectContent>
           </Select>

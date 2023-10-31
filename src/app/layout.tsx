@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontSans.variable} font-sans text-ground`}>
-        <main className="bg-[url('assets/home.png')] bg-cover bg-fixed bg-center min-h-screen">
+        <main className="bg-[url('../assets/home.png')] bg-cover bg-fixed bg-center min-h-screen">
           <header className='flex items-center justify-between py-2 px-44 shadow-xl bg-zinc-100'>
             <Button variant='outline' className='font-bold border-ground border-2 rounded-sm'>
               Pypestore

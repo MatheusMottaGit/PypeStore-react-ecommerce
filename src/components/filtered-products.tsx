@@ -2,7 +2,9 @@ import React from 'react'
 
 const FilteredProducts = () => {
   return (
-    <div>FilteredProducts</div>
+    <div>
+
+    </div>
   )
 }
 

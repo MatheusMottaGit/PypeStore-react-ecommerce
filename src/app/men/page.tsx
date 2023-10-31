@@ -6,12 +6,11 @@ import React from 'react'
 
 const Men = () => {
   return (
-
     // men page
     <main>
 
       {/* presentation */}
-      <div className="h-[40vh] bg-[url('assets/men.png')] bg-center bg-cover flex items-center justify-start px-44">
+      <div className="h-[40vh] bg-[url('../assets/men.png')] bg-center bg-cover flex items-center justify-start px-44">
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl font-bold">Male section available!</h1>
 
@@ -20,7 +19,7 @@ const Men = () => {
           </span>
 
           <Button className="w-64 mt-12 bg-ground text-zinc-300 gap-1">
-            See products
+            View products
             <ArrowDown className="w-4 h-4"/>
           </Button>
         </div>
@@ -59,7 +58,7 @@ const Men = () => {
         </div>
 
         {/* filtered products */}
-        
+
       </div>
     </main>
   )

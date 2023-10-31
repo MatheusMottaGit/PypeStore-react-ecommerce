@@ -1,7 +1,6 @@
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Select, SelectTrigger } from '@/components/ui/select'
-import { Separator } from '@/components/ui/separator'
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { ArrowDown, SlidersHorizontal } from 'lucide-react'
 import React from 'react'
 
@@ -30,7 +29,7 @@ const Men = () => {
       {/* products section */}
       <div className="bg-zinc-100 flex items-center flex-col gap-16 py-5 px-32">
 
-        {/* filter management */}
+        {/* filter management bar*/}
         <div className='flex items-center justify-between w-full'>
           <div className='flex space-x-2 items-center'>
             <SlidersHorizontal className='w-4 h-4'/>
@@ -39,17 +38,28 @@ const Men = () => {
             <span className='flex items-center gap-2 pl-3'>
               Results
               <Badge>
-                15
+                0
               </Badge>
             </span>
           </div>
 
           <Select>
             <SelectTrigger className='w-52'>
-              Sort By
+              <SelectValue placeholder='Sort By'/>
             </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectItem className='cursor-pointer' value='t-shirts'>T-shirts</SelectItem>
+                <SelectItem className='cursor-pointer' value='pants'>Pants</SelectItem>
+                <SelectItem className='cursor-pointer' value='jackets'>Jackets</SelectItem>
+                <SelectItem className='cursor-pointer' value='shoes'>Shoes</SelectItem>
+              </SelectGroup>
+            </SelectContent>
           </Select>
         </div>
+
+        {/* filtered products */}
+        
       </div>
     </main>
   )

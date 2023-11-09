@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
+export type Clothe = "t-shirt" | "pants" | "shoes" | "jacket" | "dress";
 
 export interface Product {
   id: number;
@@ -7,8 +7,6 @@ export interface Product {
   price: number;
   clothe?: string;
 }
-
-export type Clothe = "t-shirt" | "pants" | "shoes" | "jacket" | "dress";
 
 export type SelectValues = {
   id: string;

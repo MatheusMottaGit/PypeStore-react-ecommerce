@@ -9,12 +9,10 @@ import {
   SelectValue,
 } from "./ui/select";
 import { Category } from "@/types/types";
-import { useFilter } from "@/contexts/filter-context";
+import { useFilter } from "@/hooks/useFilter";
 
 const FilterCategorySelect = () => {
-  const { setCategory, category } = useFilter();
-
-  console.log(category);
+  const { onChangeCategory } = useFilter();
 
   return (
     <Select>
@@ -25,12 +23,19 @@ const FilterCategorySelect = () => {
         <SelectGroup>
           <SelectItem
             value="women's"
-            onClick={() => setCategory(Category.WOMEN)}
+            onClick={() => {
+              onChangeCategory(Category.WOMEN);
+            }}
           >
             Women's
           </SelectItem>
 
-          <SelectItem value="men's" onClick={() => setCategory(Category.MEN)}>
+          <SelectItem
+            value="men's"
+            onClick={() => {
+              onChangeCategory(Category.MEN);
+            }}
+          >
             Men's
           </SelectItem>
         </SelectGroup>

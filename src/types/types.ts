@@ -2,7 +2,7 @@ export type Clothe = "t-shirt" | "pants" | "shoes" | "jacket" | "dress";
 
 export enum Category {
   MEN,
-  WOMEN
+  WOMEN,
 }
 
 export interface Product {
@@ -12,10 +12,3 @@ export interface Product {
   price: number;
   clothe?: string;
 }
-
-export type SelectValues = {
-  id: string;
-  value: string;
-  title: string;
-  clothe: Clothe;
-};

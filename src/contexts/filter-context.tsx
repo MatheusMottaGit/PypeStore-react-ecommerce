@@ -2,28 +2,34 @@ import { Category, Clothe } from "@/types/types";
 import { createContext, useContext, useState } from "react";
 
 export const FilterContext = createContext({
-  clothe: "t-shirt",
+  clothe: Clothe.DRESS,
   category: Category.WOMEN,
-  setCategory: (category: Category) => {},
-  setClothe: (clothe: Clothe) => {},
+  onChangeCategory: (category: Category) => {},
+  onChangeClotheType: (clothe: Clothe) => {},
 });
 
 export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
-  const [clothe, setClothe] = useState<Clothe>("t-shirt");
-  const [category, setCategory] = useState<Category>(Category.WOMEN);
+  const [clothe, setClothe] = useState(Clothe.DRESS);
+  const [category, setCategory] = useState(Category.WOMEN);
+
+  const onChangeCategory = (category: Category) => {
+    setCategory(category);
+  };
+
+  function onChangeClotheType(clothe: Clothe) {
+    setClothe(clothe);
+  }
 
   return (
     <FilterContext.Provider
       value={{
         clothe,
-        setClothe,
+        onChangeClotheType,
         category,
-        setCategory,
+        onChangeCategory,
       }}
     >
       {children}
     </FilterContext.Provider>
   );
 };
-
-export const useFilter = () => useContext(FilterContext);

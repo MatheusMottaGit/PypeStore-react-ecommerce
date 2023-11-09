@@ -9,7 +9,7 @@ export const FilterContext = createContext({
 });
 
 export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
-  const [clothe, setClothe] = useState<Clothe | string>("t-shirt");
+  const [clothe, setClothe] = useState<Clothe>("t-shirt");
   const [category, setCategory] = useState<Category>(Category.WOMEN);
 
   return (

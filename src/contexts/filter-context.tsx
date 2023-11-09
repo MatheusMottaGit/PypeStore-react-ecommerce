@@ -1,5 +1,4 @@
-import { api } from "@/lib/axios";
-import { Clothe, Product } from "@/types/types";
+import { Clothe } from "@/types/types";
 import { createContext, useContext, useState } from "react";
 
 export const FilterContext = createContext({

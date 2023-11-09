@@ -9,18 +9,19 @@ const Products = () => {
   return (
     <main>
       {/* presentation */}
-      <div className="bg-[url('../assets/men.png')] h-[40vh] bg-fixed bg-cover flex items-center justify-center px-44">
-        <div className="flex flex-col gap-4">
-          <h1 className="text-7xl font-bold">Check our summer edition!</h1>
+      <div className="bg-[url('../assets/products.png')] h-[60vh] bg-fixed bg-cover flex items-start p-16">
+        <div className="flex flex-col items-center text-center gap-4 w-full">
+          <h1 className="text-6xl font-bold">
+            Check our brand new <br /> collection!
+          </h1>
 
-          <span className="w-2/4 text-zinc-900">
+          <p className="text-zinc-900 ml-2 w-2/6">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et ullam
             dolorem ad, exercitationem doloribus nostrum voluptatum odit
-            doloremque! Debitis est iure nobis molestiae vel tempore quia quis
-            minima harum sunt?
-          </span>
+            doloremque!
+          </p>
 
-          <Button className="w-64 mt-12 bg-ground text-zinc-300 gap-1">
+          <Button className="w-36 mt-7 bg-ground text-zinc-300 gap-1">
             View all
             <ArrowDown className="w-4 h-4" />
           </Button>

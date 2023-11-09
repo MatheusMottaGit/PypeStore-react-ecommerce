@@ -26,19 +26,19 @@ const services = [
 
 export default function Home() {
   return (
-    // homepage main
+    // homepage
     <main>
       {/* presentation */}
       <div className="h-[60vh] flex items-center justify-start px-44">
         <div className="flex flex-col gap-4">
-          <h1 className="text-7xl font-bold">Welcome to Pypestore!</h1>
+          <h1 className="text-6xl font-bold">Welcome to Pypestore!</h1>
 
-          <span className="w-2/4 text-zinc-900">
+          <p className="w-2/4 text-zinc-900">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Et ullam
             dolorem ad, exercitationem doloribus nostrum voluptatum odit
             doloremque! Debitis est iure nobis molestiae vel tempore quia quis
             minima harum sunt?
-          </span>
+          </p>
 
           <Button className="w-64 mt-12 bg-ground text-zinc-300">
             Let's start
@@ -71,7 +71,7 @@ export default function Home() {
         <h1 className="font-bold text-xl">Popular this week</h1>
 
         {/* popular products this week */}
-        <PopularProductsWeek />
+        {/* <PopularProductsWeek /> */}
       </div>
     </main>
   );

@@ -4,7 +4,8 @@ import "./globals.css";
 import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";
 import MenuList from "@/components/menu-list";
-import { Providers } from "@/providers/providers";
+import { Filter } from "@/providers/filter";
+import { Query } from "@/providers/query";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -38,7 +39,9 @@ export default function RootLayout({
             <ShoppingBag className="w-5 h-5" />
           </header>
 
-          <Providers>{children}</Providers>
+          <Query>
+            <Filter>{children}</Filter>
+          </Query>
         </main>
       </body>
     </html>

@@ -1,8 +1,14 @@
-export type Clothe = "t-shirt" | "pants" | "shoes" | "jacket" | "dress";
+export enum Clothe {
+  "T-SHIRT",
+  "PANTS",
+  "SHOES",
+  "DRESS",
+  "JACKET",
+}
 
 export enum Category {
-  MEN,
-  WOMEN,
+  "MEN",
+  "WOMEN",
 }
 
 export interface Product {
@@ -10,5 +16,4 @@ export interface Product {
   name: string;
   url: string;
   price: number;
-  clothe?: string;
 }

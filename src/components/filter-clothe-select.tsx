@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import { Category, Clothe, SelectValues } from "@/types/types";
+import { useFilter } from "@/contexts/filter-context";
 import {
   Select,
   SelectContent,
@@ -7,9 +9,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { SelectValues } from "@/types/types";
-import { useFilter } from "@/contexts/filter-context";
+} from "./ui/select";
 
 const selectValues: SelectValues[] = [
   {
@@ -38,13 +38,17 @@ const selectValues: SelectValues[] = [
   },
 ];
 
-const FilterSelect = () => {
-  const { setClothe } = useFilter();
+const FilterClotheSelect = () => {
+  const { setClothe, category } = useFilter();
+
+  function handleChangeClotheType(clothe: Clothe) {
+    setClothe(clothe);
+  }
 
   return (
     <Select>
       <SelectTrigger className="w-52">
-        <SelectValue placeholder="Sort By" />
+        <SelectValue placeholder="Sort by clothe" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
@@ -53,17 +57,25 @@ const FilterSelect = () => {
               <SelectItem
                 key={select.id}
                 value={select.value}
-                onClick={() => setClothe(select.clothe)}
+                onClick={() => handleChangeClotheType(select.clothe)}
                 className="cursor-pointer"
               >
                 {select.title}
               </SelectItem>
             );
           })}
+
+          {category === Category.WOMEN ? (
+            <SelectItem value="dress" className="cursor-pointer">
+              Dresses
+            </SelectItem>
+          ) : (
+            <></>
+          )}
         </SelectGroup>
       </SelectContent>
     </Select>
   );
 };
 
-export default FilterSelect;
+export default FilterClotheSelect;

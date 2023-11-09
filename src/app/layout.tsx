@@ -25,24 +25,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${fontSans.variable} font-sans text-ground`}>
-        <main className="bg-[url('../assets/home.png')] bg-cover bg-fixed bg-center min-h-screen">
-          <header className="flex items-center justify-between py-2 px-32 shadow-xl bg-zinc-100">
-            <Button
-              variant="outline"
-              className="font-bold border-ground border-2 rounded-sm"
-            >
-              Pypestore
-            </Button>
+        {/* query client provider */}
+        <Query>
+          {/* filter context provider */}
+          <Filter>
+            <main className="bg-[url('../assets/home.png')] bg-cover bg-fixed bg-center min-h-screen">
+              <header className="flex items-center justify-between py-2 px-32 shadow-xl bg-zinc-100">
+                <Button
+                  variant="outline"
+                  className="font-bold border-ground border-2 rounded-sm"
+                >
+                  Pypestore
+                </Button>
 
-            <MenuList />
+                <MenuList />
 
-            <ShoppingBag className="w-5 h-5" />
-          </header>
+                <ShoppingBag className="w-5 h-5" />
+              </header>
 
-          <Query>
-            <Filter>{children}</Filter>
-          </Query>
-        </main>
+              {children}
+            </main>
+          </Filter>
+        </Query>
       </body>
     </html>
   );

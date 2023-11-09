@@ -14,10 +14,6 @@ import { useFilter } from "@/contexts/filter-context";
 const FilterCategorySelect = () => {
   const { setCategory, category } = useFilter();
 
-  function handleChangeCategory(category: Category) {
-    setCategory(category);
-  }
-
   console.log(category);
 
   return (
@@ -29,15 +25,12 @@ const FilterCategorySelect = () => {
         <SelectGroup>
           <SelectItem
             value="women's"
-            onClick={() => handleChangeCategory(Category.WOMEN)}
+            onClick={() => setCategory(Category.WOMEN)}
           >
             Women's
           </SelectItem>
 
-          <SelectItem
-            value="men's"
-            onClick={() => handleChangeCategory(Category.MEN)}
-          >
+          <SelectItem value="men's" onClick={() => setCategory(Category.MEN)}>
             Men's
           </SelectItem>
         </SelectGroup>

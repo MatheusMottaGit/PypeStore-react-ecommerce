@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Category, Clothe, SelectValues } from "@/types/types";
+import { Category, Clothe } from "@/types/types";
 import { useFilter } from "@/contexts/filter-context";
 import {
   Select,
@@ -10,6 +10,13 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+
+type SelectValues = {
+  id: string;
+  value: string;
+  title: string;
+  clothe: Clothe;
+};
 
 const selectValues: SelectValues[] = [
   {
@@ -39,10 +46,11 @@ const selectValues: SelectValues[] = [
 ];
 
 const FilterClotheSelect = () => {
-  const { setClothe, category } = useFilter();
+  const { setClothe, category, clothe } = useFilter();
 
-  function handleChangeClotheType(clothe: Clothe) {
+  function onSelectClotheType(clothe: Clothe) {
     setClothe(clothe);
+    console.log(clothe);
   }
 
   return (
@@ -57,7 +65,7 @@ const FilterClotheSelect = () => {
               <SelectItem
                 key={select.id}
                 value={select.value}
-                onClick={() => handleChangeClotheType(select.clothe)}
+                onClick={() => onSelectClotheType(select.clothe)}
                 className="cursor-pointer"
               >
                 {select.title}

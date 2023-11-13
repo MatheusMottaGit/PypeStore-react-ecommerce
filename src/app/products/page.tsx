@@ -39,7 +39,7 @@ const Products = () => {
             <ProductsQuantity />
           </div>
 
-          <div className="flex space-x-4">
+          <div className="flex space-x-16">
             <FilterCategorySelect />
 
             <FilterClotheSelect />

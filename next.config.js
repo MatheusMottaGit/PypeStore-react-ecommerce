@@ -26,6 +26,9 @@ const nextConfig = {
       { hostname: "assetsprx.matchesfashion.com" },
       { hostname: "image27.stylesimo.com" },
       { hostname: "manzara.b-cdn.net" },
+      { hostname: "tollwear.gr" },
+      { hostname: "images.sellbrite.com" },
+      { hostname: "meteew.com" },
     ],
   },
 };

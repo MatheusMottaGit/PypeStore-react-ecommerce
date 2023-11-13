@@ -17,22 +17,20 @@ const FilterCategorySelect = () => {
   return (
     <Select>
       <SelectTrigger className="w-52">
-        <SelectValue placeholder="Select section" />
+        <SelectValue placeholder="Choose category" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectItem
             value="women's"
-            onClick={() => {
-              onChangeCategory(Category.WOMEN);
-            }}
+            onSelect={() => onChangeCategory(Category.WOMEN)}
           >
             Women's
           </SelectItem>
 
           <SelectItem
             value="men's"
-            onClick={() => {
+            onSelect={() => {
               onChangeCategory(Category.MEN);
             }}
           >

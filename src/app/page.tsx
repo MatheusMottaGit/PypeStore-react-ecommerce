@@ -71,7 +71,7 @@ export default function Home() {
         <h1 className="font-bold text-xl">Popular this week</h1>
 
         {/* popular products this week */}
-        {/* <PopularProductsWeek /> */}
+        <PopularProductsWeek />
       </div>
     </main>
   );

@@ -1,6 +1,7 @@
 import FilterCategorySelect from "@/components/filter-category-select";
 import FilterClotheSelect from "@/components/filter-clothe-select";
 import FilteredProducts from "@/components/filtered-products";
+import ProductsQuantity from "@/components/products-quantity";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, SlidersHorizontal } from "lucide-react";
 import React from "react";
@@ -35,6 +36,7 @@ const Products = () => {
           <div className="flex space-x-2 items-center">
             <SlidersHorizontal className="w-4 h-4" />
             <h2 className="border-r px-2 border-r-ground">Filters</h2>
+            <ProductsQuantity />
           </div>
 
           <div className="flex space-x-4">

@@ -9,14 +9,15 @@ const PopularProductsWeek = async () => {
 
   return (
     <div className="grid grid-cols-5 gap-8 place-items-center">
-      {products.slice(0, 5).map((prod) => {
+      {products.slice(0, 5).map(({ id, name, price, overview, url }) => {
         return (
           <ProductCard
-            key={prod.id}
-            id={prod.id}
-            name={prod.name}
-            price={prod.price}
-            url={prod.url}
+            overview={overview}
+            key={id}
+            id={id}
+            name={name}
+            price={price}
+            url={url}
           />
         );
       })}

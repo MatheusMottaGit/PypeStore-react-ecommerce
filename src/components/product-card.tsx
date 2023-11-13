@@ -1,27 +1,31 @@
-import React from 'react'
-import { Card, CardDescription, CardTitle } from './ui/card'
-import Image from 'next/image'
-import { Product } from '@/types/types'
+import React from "react";
+import { Card, CardDescription, CardTitle } from "./ui/card";
+import Image from "next/image";
+import { Product } from "@/types/types";
+import { Badge } from "./ui/badge";
 
-const ProductCard = ({ id, name, price, url }: Product) => {
+const ProductCard = ({ id, name, price, url, overview }: Product) => {
   return (
-    <Card key={id} className='rounded-sm text-center space-y-4 p-2'>
-      <Image 
+    <Card key={id} className="rounded-sm space-y-4 p-2 h-fit cursor-pointer">
+      <Image
         src={url}
-        alt=''
+        alt=""
         width={200}
         height={200}
-        className='h-56'
+        className="h-40 object-cover"
       />
 
-      <CardTitle>
-        {name}
-      </CardTitle>
-      <CardDescription className='font-semibold'>
-        R$ {price}
-      </CardDescription>
-    </Card>
-  )
-}
+      <div className="flex flex-col gap-2">
+        <CardTitle>{name}</CardTitle>
 
-export default ProductCard
+        <CardDescription className="text-xs">
+          {overview.slice(0, 15).concat("...")}
+        </CardDescription>
+
+        <Badge className="w-fit">R$ {price}</Badge>
+      </div>
+    </Card>
+  );
+};
+
+export default ProductCard;

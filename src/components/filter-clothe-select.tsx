@@ -19,62 +19,34 @@ type SelectValues = {
 };
 
 const selectValues: SelectValues[] = [
-  {
-    id: "23892",
-    value: "t-shirt",
-    title: "T-shirts",
-    clothe: Clothe["T-SHIRT"],
-  },
-  {
-    id: "21123",
-    value: "pants",
-    title: "Pants",
-    clothe: Clothe.PANTS,
-  },
-  {
-    id: "28323",
-    value: "jackets",
-    title: "Jackets",
-    clothe: Clothe.JACKET,
-  },
-  {
-    id: "22334",
-    value: "shoes",
-    title: "Shoes",
-    clothe: Clothe.SHOES,
-  },
+  { id: "1", value: "t-shirt", title: "T-shirts", clothe: Clothe["T-SHIRT"] },
+  { id: "2", value: "pants", title: "Pants", clothe: Clothe.PANTS },
+  { id: "3", value: "shoes", title: "Shoes", clothe: Clothe.SHOES },
+  { id: "4", value: "jacket", title: "Jackets", clothe: Clothe.JACKET },
+  { id: "5", value: "dress", title: "Dresses", clothe: Clothe.DRESS },
 ];
 
 const FilterClotheSelect = () => {
-  const { onChangeClotheType, category } = useFilter();
+  const { onChangeClotheType } = useFilter();
 
   return (
     <Select>
       <SelectTrigger className="w-52">
         <SelectValue placeholder="Sort by clothe" />
       </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          {selectValues.map((select) => {
+      <SelectContent className="bg-zinc-100 px-2 py-1 text-sm">
+        <SelectGroup className="space-y-2">
+          {selectValues.map(({ id, title, value, clothe }) => {
             return (
-              <SelectItem
-                key={select.id}
-                value={select.value}
-                onClick={() => onChangeClotheType(select.clothe)}
-                className="cursor-pointer"
+              <li
+                key={id}
+                className="list-none cursor-pointer"
+                onClick={() => onChangeClotheType(clothe)}
               >
-                {select.title}
-              </SelectItem>
+                {title}
+              </li>
             );
           })}
-
-          {category === Category.WOMEN ? (
-            <SelectItem value="dress" className="cursor-pointer">
-              Dresses
-            </SelectItem>
-          ) : (
-            <></>
-          )}
         </SelectGroup>
       </SelectContent>
     </Select>
